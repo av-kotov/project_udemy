@@ -1,13 +1,7 @@
 "use strict";
 
-let incr = 10,
-    decr = 10;
 
-incr++;
-decr--;
+let a = +prompt("Введите первое число", "");
+let b = +prompt("Введите второе число", "");
 
-console.log(incr);
-console.log(decr);
-
-
-console.log(2*4 == 'вап');
+alert( a + b );
