@@ -30,6 +30,24 @@ if (login == "admin") {
 //     alert( "Error. Invalid value" );
 // }
 
+
+
+// if (numberOfFilms == null || numberOfFilms == '') {
+//   +prompt ('Сколько фильмов вы уже посмотрели?', '');
+// } else {
+//   if (personalMovieDB.count < 10) {
+//   alert('мало!');
+// } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30 ) {
+//   alert('classic');
+// } else if(personalMovieDB.count > 30) {
+//   alert('Good!');
+//   } else {
+//     alert ('OK!');
+//   }
+// }
+
+
+
 const numberOfFilms = +prompt ('Сколько фильмов вы уже посмотрели?', '');
 
 const personalMovieDB = {
@@ -40,42 +58,28 @@ const personalMovieDB = {
   privat: false
 };
 
-if (numberOfFilms == null || numberOfFilms == '') {
-  +prompt ('Сколько фильмов вы уже посмотрели?', '');
-} else {
-  if (personalMovieDB.count < 10) {
-  alert('мало!');
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30 ) {
-  alert('classic');
-} else if(personalMovieDB.count > 30) {
-  alert('Good!');
-  } else {
-    alert ('OK!');
+
+ for (let i = 0; i < 2; i++) {
+  const a = prompt ('Один из последних просмотренных фильмов:?', ''),
+        b = prompt ('На сколько оцените его?', '');
+
+        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+          personalMovieDB.movies[a] = b;
+          console.log('done');
+        } else {
+          console.log('error');
+          i--;
+        }
   }
-}
 
+  if (personalMovieDB.count < 10) {
+    console.log('мало!')
+  } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30 ) {
+      console.log('classic');
+  } else if(personalMovieDB.count >= 30) {
+      console.log('Good!');
+  } else {
+      console.log ('Error!');
+  }
 
-
-
-
-
-
-
-
-
-
-//  const a = prompt ('Один из последних просмотренных фильмов:?', ''),
-//        b = prompt ('На сколько оцените его?', ''),
-//        c = prompt ('Один из последних просмотренных фильмов:?', ''),
-//        d = prompt ('На сколько оцените его?', '');
-
-//  personalMovieDB.movies[a] = b;
-//  personalMovieDB.movies[c] = d;
-
-//  console.log(personalMovieDB)
-
-// for (let i = 2; i <= 10; ++i) {
-//   if (i % 2 == 0) {
-//     alert(i);
-//   }
-// }
+ console.log(personalMovieDB)
